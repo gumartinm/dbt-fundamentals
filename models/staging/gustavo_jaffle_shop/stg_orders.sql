@@ -6,7 +6,7 @@ with orders as (
         order_date,
         status
 
-    from gustavo_jaffle_shop.orders
+    from {{ source('gustavo_jaffle_shop', 'orders') }} 
 
 )
 

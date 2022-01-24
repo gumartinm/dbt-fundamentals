@@ -6,6 +6,7 @@ with customers as (
         last_name
 
     from gustavo_jaffle_shop.customers
+    from {{ source('gustavo_jaffle_shop', 'customers') }} 
 
 )
 
