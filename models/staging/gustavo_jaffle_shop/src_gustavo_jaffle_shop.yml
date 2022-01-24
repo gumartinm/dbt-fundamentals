@@ -2,6 +2,7 @@ version: 2
 
 sources:
     - name: gustavo_jaffle_shop
+      description: A clone of a Postgres application database.
       database: dwh_sch_sp_db
       schema: gustavo_jaffle_shop
       tables:
@@ -15,12 +16,14 @@ sources:
                 - not_null
 
         - name: orders
+          description: Raw orders data.
           loaded_at_field: _etl_loaded_at
           freshness:
             warn_after: { count: 12, period: hour }
             error_after: { count: 24, period: hour }
           columns:
             - name: id
+              description: Primary key for orders data.
               tests:
                 - unique
                 - not_null
