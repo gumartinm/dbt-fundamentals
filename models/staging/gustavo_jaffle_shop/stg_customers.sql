@@ -5,7 +5,6 @@ with customers as (
         first_name,
         last_name
 
-    from gustavo_jaffle_shop.customers
     from {{ source('gustavo_jaffle_shop', 'customers') }} 
 
 )
